@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="LamdaTest" verbose="1">
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="service" value="hris"></parameter>
+	<parameter name="stage" value="demo"></parameter>
+	<parameter name="platform" value="windows"></parameter>
+	<parameter name="cloudTesting" value="LAMBDA_TEST"></parameter>
+	
+	<parameter name="email" value="qa_test@swingvy.com"></parameter>
+	<parameter name="password" value="swingvydemo"></parameter>
+	
+	<test name="Sample">			
+		<classes>
+			<class name="com.swingvy.secure.LogInTests"></class>
+		</classes>
+	</test>
+</suite>

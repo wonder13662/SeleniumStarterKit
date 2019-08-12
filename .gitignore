@@ -1,0 +1,13 @@
+/target/
+*.pyc
+.idea/
+target/
+swingvy-cypress/cypress/scripts/log
+selenium/test-output
+selenium/src/main/resources/files/screenshot/*.png
+selenium/src/main/resources/files/log/*.xlsx
+selenium/src/main/resources/files/log/*.png
+selenium/src/main/resources/files/download/*.*
+*.iml
+*.tar
+*.war

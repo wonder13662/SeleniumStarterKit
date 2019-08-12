@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestSuite" verbose="1">
+	<test name="Test">
+	
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="service" value="hris"></parameter>
+		<parameter name="stage" value="alpha"></parameter>
+		<parameter name="platform" value="mac"></parameter>
+		<parameter name="cloudTesting" value="SAUCE_LABS"></parameter>
+		
+		<parameter name="email" value="qa_test@swingvy.com"></parameter>
+		<parameter name="password" value="swingvydemo"></parameter>
+				
+		<classes>
+			<class name="com.swingvy.saucelabs.samples.InstantSauceTestNGTest"></class>
+			<!--
+			<class name="com.swingvy.saucelabs.samples.InstantSauceJunitTest"></class>
+			<class name="com.swingvy.saucelabs.samples.InstantSauceTestNGTest"></class> 
+			-->
+		</classes>
+	</test>
+</suite>

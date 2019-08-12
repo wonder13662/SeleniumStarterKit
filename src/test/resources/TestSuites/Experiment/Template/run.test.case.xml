@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Swingvy template">
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="service" value="hris"></parameter>
+	<parameter name="stage" value="beta"></parameter>
+	<parameter name="isSwingvyLogging" value="true"></parameter>
+	
+	<parameter name="SwingvyCompanySnapshot" value="billing-freetrial-1"></parameter>
+
+	<test name="RunTestCase">
+		<classes>
+			<class name="com.swingvy.test.template.RunTestCase"></class>
+		</classes>
+	</test>
+
+</suite>

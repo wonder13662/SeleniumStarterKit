@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="LamdaTest" verbose="1">
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="service" value="hris"></parameter>
+	<parameter name="stage" value="beta"></parameter>
+	<parameter name="platform" value="windows"></parameter>
+	<parameter name="cloudTesting" value="BROWSER_STACK"></parameter>
+	
+	
+	<test name="1.SetPreconditions">
+		<parameter name="SwingvyCompanySnapshot" value="billing-freetrial-1"></parameter>
+		<parameter name="isSwingvyLogging" value="true"></parameter>
+		<classes>
+			<class name="com.swingvy.billing.setPreconditions.SetPreconditions"></class>
+		</classes>
+	</test>	
+	
+	<!--  
+	<test name="1.SetPreconditions">
+		<parameter name="SwingvyCompanySnapshot" value="billing-freetrial-1"></parameter>
+		<parameter name="isSwingvyLogging" value="true"></parameter>
+		<classes>
+			<class name="com.swingvy.billing.setPreconditions.SetPreconditions"></class>
+		</classes>
+	</test>
+	-->
+	
+	<!-- 	
+	<test name="Sample">			
+		<parameter name="email" value="qa_test@swingvy.com"></parameter>
+		<parameter name="password" value="swingvydemo"></parameter>
+		<classes>
+			<class name="com.swingvy.secure.LogInTests"></class>
+		</classes>
+	</test>	
+	 -->
+</suite>
