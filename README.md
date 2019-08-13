@@ -21,9 +21,6 @@
 ![Alt text](http://seleniumquery.github.io/images/ie-driver-protected-mode-disable.png)
 7. Selenium grid for the parallel executions in mutiple machines. [Click](https://github.com/SeleniumHQ/selenium/wiki/Grid2)
 
-# Root Directory
-1. selenium is at '/auto-testing/selenium'
-
 # Package structures
 1. src/main/java
 - It contains Page component object, Page object, Action object
@@ -36,9 +33,9 @@
 
 # Class definition
 1. Command: Atomic event which user can trigger on the web ex) Click, Select, Move to a specific page, etc.
-2. Component: Recognizable distinctive elements on the page ex) Panel, Table, Dropdown, Button 
-3. Page: The area user can see and control on the browser ex) HRIS Leave page, Payroll Payrun page.
-4. Action: The tasks user want to complete ex) Completing payrun action(MonthEnd/MidMonth/Adhoc)
+2. Component: Recognizable distinctive elements on the page ex) Rakuten home navigation top (Panel, Table, Dropdown, Button) 
+3. Page: The area user can see and control on the browser ex) Rakuten home page.
+4. Action: The tasks user want to complete ex) Open top navition at Rakuten home page and verify its menu names
 
 # Bug history
 1. Nov 9, 2018 Safari element.getLocation throws a nullPointerException [Click](https://github.com/SeleniumHQ/selenium/issues/6637)
@@ -52,7 +49,7 @@
 
 # ETC
 1. How to initialize Win10 [Click](https://gbworld.tistory.com/1238)
-2. Git repository에는 등록되어야 하지만, 추가적인 변화는 업데이트가 되지 말아야 할 파일설정 ex) Gmail API access token [Click](https://wildlyinaccurate.com/git-ignore-changes-in-already-tracked-files/)
+2. How not to allowed file updated which already has been registered to repository ex) Gmail API access token [Click](https://wildlyinaccurate.com/git-ignore-changes-in-already-tracked-files/)
 ```
 $ git update-index --assume-unchanged <file>
 $ git update-index --no-assume-unchanged <file>
