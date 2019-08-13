@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="rakuten-home" parallel="tests" thread-count="5">
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="service" value="rakuten"></parameter>
+	<parameter name="stage" value="real"></parameter>
+	
+	<test name="top-nav">
+		<classes>
+			<class name="com.service.test.RakutenHomeTest"></class>
+		</classes>
+	</test>
+</suite>

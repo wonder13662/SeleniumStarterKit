@@ -1,4 +1,7 @@
 /target/
+.classpath
+.project
+/test-output/
 *.pyc
 .idea/
 target/

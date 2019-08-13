@@ -37,5 +37,4 @@ public class BasePage {
 		String actual = baseCommand.getCurrentUrl();
 		Assert.assertEquals(actual, expected);
 	}
-	
 }

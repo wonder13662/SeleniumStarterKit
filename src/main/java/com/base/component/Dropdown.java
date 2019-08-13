@@ -240,13 +240,13 @@ public class Dropdown extends BaseComponent {
 			return;
 		}
 		
-		baseCommand.waitShortlyUntil(new ExpectedCondition<Boolean>() {
+		baseCommand.waitUntil(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {		
 				String actual = getSelectedVisibleText();
 				env.info(false, String.format("expected:\"%s\" == actual:\"%s\" at waitUntilSelectedOption ", expected, actual));
 				return expected.equals(actual);
 			}
-		});		
+		}, Timeout.SHORT);		
 	}	
 	
 	public List<String> getOptionVisisbleTexts() {

@@ -238,32 +238,6 @@ public class BaseCommand {
 		}
 	}
 	
-	
-	@Deprecated
-	public void waitUntilInputValuePresented(SearchStep inputSearchStep, String expected) {
-		getLongWait().until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				
-				String actual = getInputValue(inputSearchStep);
-				boolean isDebug = false;
-				if(isDebug) {
-					 env.getLogger().info(String.format("expected:%s at waitUntilTextPresented", expected));
-					 env.getLogger().info(String.format("actual:%s at waitUntilTextPresented", actual));					
-				}
-				return StringUtil.isNotEmpty(actual) && actual.equals(expected);
-			}
-		});		
-	}
-	@Deprecated
-	public void waitUntilTextPresenceOfElementLocated(String query, String text) {
-		By locator = By.cssSelector(query);
-		getLongWait().until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
-	}
-
-	public void waitLongUntil(ExpectedCondition<Boolean> condition) {
-		getLongWait().until(condition);
-	}
-	
 	public void waitUntil(ExpectedCondition<Boolean> condition, Timeout timeout) {
 		getWait(timeout).until(condition);
 	}
@@ -272,10 +246,6 @@ public class BaseCommand {
 		getMidWait().until(condition);
 	}	
 	
-	public void waitShortlyUntil(ExpectedCondition<Boolean> condition) {
-		getShortWait().until(condition);
-	}
-	
 	private WebDriverWait getWait(Timeout timeout) {
 		return new WebDriverWait(env.getDriver(), timeout.getSecond(), 300);
 	}
@@ -283,15 +253,15 @@ public class BaseCommand {
 	public WebDriverWait getSessionExpirationWait() {
 		return getWait(Timeout.SESSION_EXPIRE_WAIT_COOKIE);
 	}
-	
+	@Deprecated
 	private WebDriverWait getLongWait() {
 		return getWait(Timeout.LONG);
 	}
-	
+	@Deprecated
 	private WebDriverWait getMidWait() {
 		return getWait(Timeout.MID);
 	}
-
+	@Deprecated
 	private WebDriverWait getShortWait() {
 		return getWait(Timeout.SHORT);
 	}
@@ -450,7 +420,6 @@ public class BaseCommand {
 		}
 	}
 	
-	@Deprecated
 	public void waitUntilClickable(String query) {
 		By locator = By.cssSelector(query);
 		getLongWait().until(ExpectedConditions.elementToBeClickable(locator));
@@ -607,14 +576,6 @@ public class BaseCommand {
 		});
 	}
 	
-	public void waitLongUntil(SearchStep searchStep) {
-		getLongWait().until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				return doesExist(searchStep);
-			}
-		});
-	}	
-	
 	public WebElement findChild(WebElement parent, String query) {
 		return findChild(parent, By.cssSelector(query));
 	}
@@ -652,6 +613,11 @@ public class BaseCommand {
 			return result.toString(); 
 		}
 		return "";
+	}
+	
+	public void scrollWindowDownAndUp() {
+		((JavascriptExecutor) env.getDriver()).executeScript(String.format("window.scrollTo(0,100);"));
+		((JavascriptExecutor) env.getDriver()).executeScript(String.format("window.scrollTo(0,0);"));
 	}
 	
 	public void scrollTop(String query) {

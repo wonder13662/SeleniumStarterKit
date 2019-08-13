@@ -119,15 +119,15 @@ public class Button extends BaseComponent {
 	}
 	
 	private void waitUntilBtnHasTitle() {
-		baseCommand.waitLongUntil(new ExpectedCondition<Boolean>() {
+		baseCommand.waitUntil(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				return doesExist() && hasTitle();
 			}
-		});
+		}, Timeout.MID);
 	}
 	
 	private void waitUntilBtnTitleRestored(String expected) {
-		baseCommand.waitLongUntil(new ExpectedCondition<Boolean>() {
+		baseCommand.waitUntil(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				if(doesExist()) {
 					String actual = getTitle();
@@ -137,6 +137,6 @@ public class Button extends BaseComponent {
 				// 1. 클릭 직후, 처리가 완료되어서 버튼이 DOM에서 사라진 상황의 처리
 				return true;
 			}
-		});		
+		}, Timeout.MID);		
 	}
 }

@@ -380,7 +380,9 @@ public class Field {
 		} else if(input != null) {
 			return input.isPresented();
 		} else if(searchStep != null) {
-			return baseCommand.isDisplayed(searchStep);
+			boolean isDisplayed = baseCommand.isDisplayed(searchStep);
+			boolean isBigger = baseCommand.isBiggerThan(searchStep, 5, 5);
+			return isDisplayed && isBigger;
 		} else if(button != null) {
 			return button.isPresented();
 		}		

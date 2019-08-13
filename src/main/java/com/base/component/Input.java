@@ -140,7 +140,7 @@ public class Input extends BaseComponent {
 	}
 	
 	private void waitUntilInputEmpty(SearchStep searchStep, String expected) {
-		baseCommand.waitLongUntil(new ExpectedCondition<Boolean>() {
+		baseCommand.waitUntil(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				// input email type은 지원하지 않음.
 				if(!baseCommand.hasAttrType(searchStep, "email")) {
@@ -162,7 +162,7 @@ public class Input extends BaseComponent {
 				}
 				return false;
 			}
-		});
+		}, Timeout.MID);
 	}	
 	
 	private void typeKeyboard(Keys key) {
@@ -256,7 +256,7 @@ public class Input extends BaseComponent {
 
 	private void waitUntilInputUpdated(SearchStep searchStep, String expected) {
 		boolean isDebug = true;
-		baseCommand.waitShortlyUntil(new ExpectedCondition<Boolean>() {
+		baseCommand.waitUntil(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				if(baseCommand.doesExist(searchStep)) {
 					WebElement element = searchStep.get();
@@ -271,12 +271,12 @@ public class Input extends BaseComponent {
 				}
 				return false;
 			}
-		});
+		}, Timeout.SHORT);
 	}
 	
 	private void waitUntilInputUpdated(SearchStep searchStep, BigDecimal expected) {
 		boolean isDebug = false;
-		baseCommand.waitShortlyUntil(new ExpectedCondition<Boolean>() {
+		baseCommand.waitUntil(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				if(baseCommand.doesExist(searchStep)) {
 					WebElement element = searchStep.get();
@@ -294,7 +294,7 @@ public class Input extends BaseComponent {
 				}
 				return false;
 			}
-		});
+		}, Timeout.SHORT);
 	}	
 	
 	private String getValueFromElement(WebElement element) {
