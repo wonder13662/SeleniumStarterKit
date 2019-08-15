@@ -31,6 +31,11 @@
 $ allure serve ./allure-results
 ```
 
+# How to generate Allure reports
+```
+$ allure generate allure-results -o allure-reports
+``` 
+
 # Package structures
 1. src/main/java
 - It contains Page component object, Page object, Action object
@@ -63,5 +68,4 @@ $ allure serve ./allure-results
 ```
 $ git update-index --assume-unchanged <file>
 $ git update-index --no-assume-unchanged <file>
-
 ```

@@ -5,6 +5,8 @@
 *.pyc
 .idea/
 target/
+.gradle/
+/allure-reports/
 /allure-results/
 swingvy-cypress/cypress/scripts/log
 selenium/test-output
