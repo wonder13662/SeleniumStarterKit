@@ -1,3 +1,16 @@
+# Benefits of Selenium Starter Kit
+* Test results by Allure and Excel sheet
+* Easily maintainable structures
+	* Action - Page - Component hierarchy
+* Google API Wrappers - Gmail
+* Helpful libraries 
+	* Handling DOM element
+	* Static file management
+	* Calculation of date, time, money, currency
+	* Verifying file download(Chrome)
+	* Excel Utility
+* Cloud testing platform examples (Saucelabs, Lambda test, Browser stack)
+
 # How to setup Selenium(Required)
 1. Download Java SE [Click](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 2. Download Eclipse [Click](https://www.eclipse.org/downloads/)
