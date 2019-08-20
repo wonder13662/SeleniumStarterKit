@@ -20,6 +20,12 @@
 6. Configure Maven Compiler plugin [Click](https://maven.apache.org/plugins/maven-compiler-plugin/)
 7. Eclipse > Help > Install new software and install TestNG(http://beust.com/eclipse)
 
+# How to install WebDriver
+1. Chrome, Firefox, Edge[Click](https://www.seleniumhq.org/download/)
+
+# How to use TestNG
+Official documents[Click](https://testng.org/doc/documentation-main.html)
+
 # How to run your first test
 1. Run test file - "rakuten.home.test.xml" by right clicking and Run as "TestNG Suite"
 
@@ -48,6 +54,14 @@ $ allure serve ./allure-results
 ```
 $ allure generate allure-results -o allure-reports
 ``` 
+
+# How to setup Webdriver of EdgeHTML18(or Higher)
+```
+You can choose one of them
+1. Search “Manage optional features” from Start, then select “Add a Feature,” “WebDriver.”
+2. Install via DISM by running the following command in an elevated command prompt: DISM.exe /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0
+```
+[Click](https://blogs.windows.com/msedgedev/2018/06/14/webdriver-w3c-recommendation-feature-on-demand/#Rg8g2hRfjBQQVRXy.97)
 
 # Package structures
 1. src/main/java
